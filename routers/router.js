@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const validate = require('validate.js');
 const { getReports, addReport } = require('../controllers/report');
 
-router.route('/get').get(getReports);
-router.route('/post').post(addReport);
+//get marked coordinates
+router.route('/').get(getReports);
+
+//file a report to specific coordinate
+router.route('/').post(addReport);
 
 module.exports = router;
