@@ -23,7 +23,7 @@ async function getReports() {
       },
       properties: {
         crowdedness: report.crowdedness,
-        icon: 'shop'
+        icon: 'marker'
       }
     };
   });
