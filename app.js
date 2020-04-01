@@ -26,6 +26,6 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Router for API
-app.use('/report/v1', require('./routers/router'));
+app.use('/api/v1/reports', require('./routers/router'));
 
 app.listen(port, () => console.log(`Running on Port ${port}!`));

@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
 
 // Fetch reported location from API
 async function getReports() {
-  const res = await fetch('/report/v1/');
+  const res = await fetch('/api/v1/reports');
   const data = await res.json();
 
   const reports = data.data.map(report => {
@@ -17,8 +17,8 @@ async function getReports() {
       geometry: {
         type: 'Point',
         coordinates: [
-          report.location.coordinates[1],
-          report.location.coordinates[0]
+          report.location.coordinates[0],
+          report.location.coordinates[1]
         ]
       },
       properties: {
@@ -46,7 +46,7 @@ function loadMap(reports) {
       },
       layout: {
         'icon-image': '{icon}-15',
-        'icon-size': 1.5,
+        'icon-size': 2,
         'text-field': '{crowdedness}',
         'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
         'text-offset': [0, 0.9],
