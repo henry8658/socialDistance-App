@@ -1,2 +1,5 @@
-# Node module
+#Node module
 node_modules
+
+# Environment Var
+config/config.env
